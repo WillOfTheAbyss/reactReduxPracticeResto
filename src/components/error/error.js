@@ -1,7 +1,15 @@
 import React from 'react';
+import NoMatch from '../redirect/'
 
-const Error = () => {
-    return <div className="error">Error</div>
+const Error = ({status}) => {
+
+    switch(status){
+        case '404': 
+            return <NoMatch />
+        default: 
+            return <div className="error">Error</div>;
+    }
+    
 }
 
 export default Error;

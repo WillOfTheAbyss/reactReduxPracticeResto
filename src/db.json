@@ -40,27 +40,27 @@
     {
       "goods": [
         {
+          "name": "Cesar salad",
+          "price": 12,
+          "count": 3
+        },
+        {
+          "name": "Pizza Margherita",
+          "price": 10,
+          "count": 2
+        },
+        {
           "name": "Greece salad",
           "price": 8,
-          "count": 3
+          "count": 1
         },
         {
           "name": "Pizza Napoletana",
           "price": 13,
           "count": 1
-        },
-        {
-          "name": "Pizza Margherita",
-          "price": 10,
-          "count": 1
-        },
-        {
-          "name": "Cesar salad",
-          "price": 12,
-          "count": 1
         }
       ],
-      "orderCost": 59,
+      "orderCost": 77,
       "id": 1
     },
     {
@@ -68,78 +68,42 @@
         {
           "name": "Cowboy Steak",
           "price": 25,
-          "count": 4
-        },
-        {
-          "name": "Cesar salad",
-          "price": 12,
-          "count": 4
+          "count": 2
         },
         {
           "name": "Pizza Margherita",
           "price": 10,
-          "count": 2
+          "count": 1
         },
         {
           "name": "Pizza Napoletana",
           "price": 13,
-          "count": 1
+          "count": 5
         }
       ],
-      "orderCost": 181,
+      "orderCost": 125,
       "id": 2
     },
     {
       "goods": [
         {
-          "name": "Pizza Margherita",
-          "price": 10,
-          "count": 3
-        },
-        {
           "name": "Greece salad",
           "price": 8,
-          "count": 4
+          "count": 3
         },
         {
           "name": "Pizza Napoletana",
           "price": 13,
-          "count": 2
-        },
-        {
-          "name": "Cowboy Steak",
-          "price": 25,
-          "count": 1
-        }
-      ],
-      "orderCost": 113,
-      "id": 3
-    },
-    {
-      "goods": [
-        {
-          "name": "Pizza Napoletana",
-          "price": 13,
-          "count": 3
-        },
-        {
-          "name": "Greece salad",
-          "price": 8,
-          "count": 4
+          "count": 5
         },
         {
           "name": "Cesar salad",
           "price": 12,
-          "count": 3
-        },
-        {
-          "name": "Pizza Margherita",
-          "price": 10,
           "count": 4
         }
       ],
-      "orderCost": 147,
-      "id": 4
+      "orderCost": 137,
+      "id": 3
     }
   ]
 }

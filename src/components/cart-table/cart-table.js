@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import {deleteCard, getOrderList, menuError, clearOrder} from '../../actions/';
 import { Button, Alert } from 'reactstrap';
@@ -6,24 +6,36 @@ import { Link } from 'react-router-dom';
 import WithRestoService from '../hoc/';
 import './cart-table.scss';
 
-class CartTable extends Component {
+const CartTable = (props) => {
 
+    const {order, RestoService, clearOrder, menuError} = props;
 
-    componentDidUpdate(){
-        const {RestoService, order, menuError,} = this.props;
-        if(!(Object.keys(order).length === 0)){
-            RestoService.setOrder(order)
-                .catch(err => menuError(err));
-        }
-    };
+    useEffect(
+        () => {
+            // debugger;
+            if(!(Object.keys(order).length === 0)){
+                // debugger;
+                console.log(Object.keys(order).length);
+                RestoService.setOrder(order)
+                    .then(res => console.log(res))
+                    .catch(err => menuError(err));
+                // debugger;
+            }
+            // debugger;
+            console.log(order);
+            return () => {
+                // debugger;
+                if(!(Object.keys(order).length === 0)){
+                    clearOrder();
+                    console.log(23);  
+                    // debugger; 
+                }
+                // debugger; 
+            };
+        }, 
+    [RestoService, clearOrder, menuError, order]);
 
-    componentWillUnmount() {
-        const {clearOrder} = this.props;
-        clearOrder();
-    }
-    render() {
-
-    const {items, deleteCard, getOrderList, order, error} = this.props;
+    const {items, deleteCard, getOrderList, error} = props;
 
     const orderBtn = items.length === 0 ? null 
         : (<Button 
@@ -40,7 +52,6 @@ class CartTable extends Component {
             deleteCard = {deleteCard}
             order= {order}/>
         );
-    }
 };
 
 const mapStateToProps = ({items, order, error}) => {

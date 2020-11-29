@@ -10,30 +10,18 @@ const CartTable = (props) => {
 
     const {order, RestoService, clearOrder, menuError} = props;
 
-    useEffect(
-        () => {
-            // debugger;
+    useEffect(() => {
             if(!(Object.keys(order).length === 0)){
-                // debugger;
-                console.log(Object.keys(order).length);
                 RestoService.setOrder(order)
-                    .then(res => console.log(res))
                     .catch(err => menuError(err));
-                // debugger;
             }
-            // debugger;
-            console.log(order);
-            return () => {
-                // debugger;
-                if(!(Object.keys(order).length === 0)){
-                    clearOrder();
-                    console.log(23);  
-                    // debugger; 
-                }
-                // debugger; 
-            };
         }, 
-    [RestoService, clearOrder, menuError, order]);
+    [RestoService, menuError, order]);
+
+    useEffect(() => {
+            return () => clearOrder();
+        },
+    [clearOrder]);
 
     const {items, deleteCard, getOrderList, error} = props;
 

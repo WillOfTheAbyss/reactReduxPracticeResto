@@ -76,7 +76,6 @@ const reducer = (state = initialState, action) => {
                 choosedItem: action.payload
             };
         case 'GET_ORDER':
-            // debugger;
             const orederList = {
                 goods: state.items.map(item => {
                     return {
@@ -87,8 +86,6 @@ const reducer = (state = initialState, action) => {
                 }),
                 orderCost: state.totalPrice
             }
-            // debugger;
-            console.log(orederList);
             return {
                 ...state,
                 items: [],
@@ -96,8 +93,6 @@ const reducer = (state = initialState, action) => {
                 order: orederList
             };
         case 'CLEAR_ORDER':
-            // debugger;
-            console.log(123);
             return {
                 ...state,
                 order: {}
